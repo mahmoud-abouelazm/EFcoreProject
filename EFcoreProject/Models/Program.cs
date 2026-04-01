@@ -1,6 +1,6 @@
-namespace EFcoreProject
+namespace EFcoreProject.Models
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
