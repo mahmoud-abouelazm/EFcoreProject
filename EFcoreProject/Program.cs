@@ -1,4 +1,6 @@
-namespace EFcoreProject.Models
+using EFcoreProject.Models;
+
+namespace EFcoreProject
 {
     public static class Program
     {
