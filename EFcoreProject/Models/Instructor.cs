@@ -12,14 +12,18 @@ namespace EFcoreProject.Models
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
 
         //Relationships : 
         [ForeignKey(nameof(Department))]
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
+        [NotMapped]
+        public Department? DepartmentManaged { get; set; }
 
         public ICollection<CourseSession> CourseSessions { get; set; } = new HashSet<CourseSession>();
+        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
+    
     }
 }
