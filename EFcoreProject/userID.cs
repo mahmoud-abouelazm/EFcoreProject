@@ -1,0 +1,41 @@
+﻿using EFcoreProject.Context;
+using EFcoreProject.Repository;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Windows.Forms;
+
+namespace EFcoreProject
+{
+    public partial class userID : Form
+    {
+        public userID()
+        {
+            InitializeComponent();
+        }
+        InstructorRepo instRepo = new();
+        // Change signature from async Task -> async void
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var id = (Convert.ToInt32(numericUpDown1?.Value ?? 0));
+            if (await instRepo.CheckInstructor(id))
+            {
+                InstructorForm instructorForm = new(id);
+                Hide();
+                await instructorForm.ShowDialogAsync();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("No Instructor Found !!" ,
+                    "Enter correct Id" ,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+    }
+}

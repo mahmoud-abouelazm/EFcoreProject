@@ -1,6 +1,6 @@
 ﻿namespace EFcoreProject
 {
-    partial class Form1
+    partial class welcomeForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            this.btnSysAdmin = new Button();
-            this.btnInstructor = new Button();
+            btnSysAdmin = new Button();
+            btnInstructor = new Button();
             btnDptMng = new Button();
             SuspendLayout();
             // 
@@ -47,23 +47,24 @@
             // 
             // btnSysAdmin
             // 
-            this.btnSysAdmin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.btnSysAdmin.Location = new Point(158, 326);
-            this.btnSysAdmin.Name = "btnSysAdmin";
-            this.btnSysAdmin.Size = new Size(448, 59);
-            this.btnSysAdmin.TabIndex = 1;
-            this.btnSysAdmin.Text = "System Admin";
-            this.btnSysAdmin.UseVisualStyleBackColor = true;
+            btnSysAdmin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSysAdmin.Location = new Point(158, 326);
+            btnSysAdmin.Name = "btnSysAdmin";
+            btnSysAdmin.Size = new Size(448, 59);
+            btnSysAdmin.TabIndex = 1;
+            btnSysAdmin.Text = "System Admin";
+            btnSysAdmin.UseVisualStyleBackColor = true;
             // 
             // btnInstructor
             // 
-            this.btnInstructor.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.btnInstructor.Location = new Point(158, 173);
-            this.btnInstructor.Name = "btnInstructor";
-            this.btnInstructor.Size = new Size(448, 59);
-            this.btnInstructor.TabIndex = 2;
-            this.btnInstructor.Text = "Instructor";
-            this.btnInstructor.UseVisualStyleBackColor = true;
+            btnInstructor.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInstructor.Location = new Point(158, 173);
+            btnInstructor.Name = "btnInstructor";
+            btnInstructor.Size = new Size(448, 59);
+            btnInstructor.TabIndex = 2;
+            btnInstructor.Text = "Instructor";
+            btnInstructor.UseVisualStyleBackColor = true;
+            btnInstructor.Click += btnInstructor_Click;
             // 
             // btnDptMng
             // 
@@ -74,17 +75,18 @@
             btnDptMng.TabIndex = 3;
             btnDptMng.Text = "Department Manager";
             btnDptMng.UseVisualStyleBackColor = true;
+            btnDptMng.Click += btnDptMng_Click;
             // 
-            // Form1
+            // welcomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 423);
             Controls.Add(btnDptMng);
-            Controls.Add(this.btnInstructor);
-            Controls.Add(this.btnSysAdmin);
+            Controls.Add(btnInstructor);
+            Controls.Add(btnSysAdmin);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "welcomeForm";
             Text = "Welcome";
             ResumeLayout(false);
             PerformLayout();
@@ -93,8 +95,8 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button btnSysAdmin;
+        private Button btnInstructor;
         private Button btnDptMng;
     }
 }

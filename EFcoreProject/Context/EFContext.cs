@@ -38,6 +38,37 @@ namespace EFcoreProject.Context
                 .HasForeignKey(c => c.InstructorId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            // Seed Data
+            modelBuilder.Entity<Department>().HasData(
+                new Department { Id = 1, Name = "Computer Science", Location = "Building A", ManagerId = null },
+                new Department { Id = 2, Name = "Mathematics", Location = "Building B", ManagerId = null }
+            );
+
+            modelBuilder.Entity<Instructor>().HasData(
+                new Instructor { ID = 1, FirstName = "Ahmed", LastName = "Ali", Phone = "01012345678", DepartmentId = 1 },
+                new Instructor { ID = 2, FirstName = "Mona", LastName = "Hassan", Phone = "01112345678", DepartmentId = 2 }
+            );
+
+            modelBuilder.Entity<Course>().HasData(
+                new Course { Id = 1, Name = "C# Programming", Duration = 40, DepartmentId = 1, InstructorId = 1 },
+                new Course { Id = 2, Name = "Calculus", Duration = 30, DepartmentId = 2, InstructorId = 2 }
+            );
+
+            modelBuilder.Entity<CourseSession>().HasData(
+                new CourseSession { Id = 1, Title = "Intro to C#", Date = new DateTime(2023, 10, 1), CourseId = 1, InstructorId = 1 },
+                new CourseSession { Id = 2, Title = "Limits and Continuity", Date = new DateTime(2023, 10, 2), CourseId = 2, InstructorId = 2 }
+            );
+
+            modelBuilder.Entity<Student>().HasData(
+                new Student { Id = 1, FirstName = "Omar", LastName = "Tarek", Phone = "01212345678" },
+                new Student { Id = 2, FirstName = "Sara", LastName = "Gamal", Phone = "01512345678" }
+            );
+
+            modelBuilder.Entity<CourseSessionAttendance>().HasData(
+                new CourseSessionAttendance { Id = 1, CourseSessionId = 1, StudentId = 1, Grade = 90, Notes = "Good" },
+                new CourseSessionAttendance { Id = 2, CourseSessionId = 2, StudentId = 2, Grade = 85, Notes = "Very Good" }
+            );
+
             base.OnModelCreating(modelBuilder);
         }
 
