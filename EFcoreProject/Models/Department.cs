@@ -14,7 +14,7 @@ namespace EFcoreProject.Models
 
         //Navigation Properties : 
         [ForeignKey(nameof(Manager))]
-        public int ManagerId { get; set; }
+        public int? ManagerId { get; set; }
         public Instructor? Manager { get; set; }
 
         public ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
