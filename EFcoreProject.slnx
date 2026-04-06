@@ -1,3 +1,14 @@
 <Solution>
+  <Folder Name="/Forms/">
+    <File Path="EFcoreProject/Form1.cs" />
+    <File Path="EFcoreProject/Form1.Designer.cs" />
+    <File Path="EFcoreProject/Form1.resx" />
+    <File Path="EFcoreProject/InstructorForm.cs" />
+    <File Path="EFcoreProject/InstructorForm.Designer.cs" />
+    <File Path="EFcoreProject/InstructorForm.resx" />
+    <File Path="EFcoreProject/userID.cs" />
+    <File Path="EFcoreProject/userID.Designer.cs" />
+    <File Path="EFcoreProject/userID.resx" />
+  </Folder>
   <Project Path="EFcoreProject/EFcoreProject.csproj" />
 </Solution>
