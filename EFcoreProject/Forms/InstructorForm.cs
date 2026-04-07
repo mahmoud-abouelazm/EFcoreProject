@@ -1,4 +1,5 @@
-﻿using EFcoreProject.Models;
+﻿using EFcoreProject.Forms;
+using EFcoreProject.Models;
 using EFcoreProject.Repository;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace EFcoreProject
         public InstructorForm(int id)
         {
             this.id = id;
-                        InitializeComponent();
+            InitializeComponent();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -30,6 +31,12 @@ namespace EFcoreProject
         {
             instructor = await InstructorRepo.GetInstructorById(id);
             lblInstructorName.Text = instructor.FirstName + " " + instructor.LastName;
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            CoursesForm coursesForm = new(id);
+            await coursesForm.ShowDialogAsync();
         }
     }
 }
