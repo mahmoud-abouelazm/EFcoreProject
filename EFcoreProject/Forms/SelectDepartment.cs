@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace EFcoreProject
 {
-    public partial class userID : Form
+    public partial class SelectDepartment : Form
     {
         InstructorRepo instRepo;
-        public userID()
+        public SelectDepartment()
         {
             instRepo = new();
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace EFcoreProject
 {
-    partial class userID
+    partial class SelectDepartment
     {
         /// <summary>
         /// Required designer variable.
