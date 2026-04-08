@@ -28,12 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CourseSessionsForm";
+            dataGridView1 = new DataGridView();
+            AddBtn = new Button();
+            updateBtn = new Button();
+            deleteBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(793, 351);
+            dataGridView1.TabIndex = 0;
+            // 
+            // AddBtn
+            // 
+            AddBtn.Location = new Point(25, 377);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(176, 50);
+            AddBtn.TabIndex = 1;
+            AddBtn.Text = "Add";
+            AddBtn.UseVisualStyleBackColor = true;
+            // 
+            // updateBtn
+            // 
+            updateBtn.Location = new Point(280, 377);
+            updateBtn.Name = "updateBtn";
+            updateBtn.Size = new Size(176, 50);
+            updateBtn.TabIndex = 2;
+            updateBtn.Text = "Update";
+            updateBtn.UseVisualStyleBackColor = true;
+            // 
+            // deleteBtn
+            // 
+            deleteBtn.Location = new Point(558, 377);
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.Size = new Size(176, 50);
+            deleteBtn.TabIndex = 3;
+            deleteBtn.Text = "Delete";
+            deleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // CourseSessionsForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(deleteBtn);
+            Controls.Add(updateBtn);
+            Controls.Add(AddBtn);
+            Controls.Add(dataGridView1);
+            Name = "CourseSessionsForm";
+            Text = "CourseSessionsForm";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private Button AddBtn;
+        private Button updateBtn;
+        private Button deleteBtn;
     }
 }

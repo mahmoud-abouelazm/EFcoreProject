@@ -1,6 +1,6 @@
 ﻿namespace EFcoreProject.Forms
 {
-    partial class SystemAdminForm
+    partial class CourseSessionAttendanceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // SystemAdminForm
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(734, 450);
-            Name = "SystemAdminForm";
-            Text = "SystemAdminForm";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "CourseSessionAttendanceForm";
         }
 
         #endregion

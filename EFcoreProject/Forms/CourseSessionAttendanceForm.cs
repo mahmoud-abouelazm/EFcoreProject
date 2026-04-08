@@ -8,15 +8,11 @@ using System.Windows.Forms;
 
 namespace EFcoreProject.Forms
 {
-    public partial class DepartmentDetails : Form
+    public partial class CourseSessionAttendanceForm : Form
     {
-        private readonly int deptId;
-
-        public DepartmentDetails(int deptId)
+        public CourseSessionAttendanceForm()
         {
             InitializeComponent();
-            this.deptId = deptId;
         }
-
     }
 }

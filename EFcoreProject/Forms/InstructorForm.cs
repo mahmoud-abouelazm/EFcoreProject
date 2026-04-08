@@ -19,6 +19,7 @@ namespace EFcoreProject
         public InstructorForm(int id)
         {
             this.id = id;
+
             InitializeComponent();
         }
 
@@ -37,6 +38,18 @@ namespace EFcoreProject
         {
             CoursesForm coursesForm = new(id);
             await coursesForm.ShowDialogAsync();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            InstructorDetails instructorDetails = new(instructor);
+            instructorDetails.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CourseSessionsForm courseSessionsForm = new CourseSessionsForm(id);
+            courseSessionsForm.ShowDialog();
         }
     }
 }

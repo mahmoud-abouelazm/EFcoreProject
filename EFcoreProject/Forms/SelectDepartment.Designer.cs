@@ -39,9 +39,9 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(101, 59);
             label1.Name = "label1";
-            label1.Size = new Size(232, 38);
+            label1.Size = new Size(263, 38);
             label1.TabIndex = 0;
-            label1.Text = "Select Instructor";
+            label1.Text = "Select Department";
             // 
             // button1
             // 
@@ -62,7 +62,7 @@
             chooseInstructor.Size = new Size(151, 28);
             chooseInstructor.TabIndex = 4;
             // 
-            // userID
+            // SelectDepartment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -70,7 +70,7 @@
             Controls.Add(chooseInstructor);
             Controls.Add(button1);
             Controls.Add(label1);
-            Name = "userID";
+            Name = "SelectDepartment";
             Text = "userID";
             Load += userID_Load;
             ResumeLayout(false);

@@ -33,6 +33,7 @@
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
+            courseSessionAttendance = new Button();
             SuspendLayout();
             // 
             // label1
@@ -76,6 +77,7 @@
             button2.TabIndex = 3;
             button2.Text = "instructor details";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -86,12 +88,24 @@
             button4.TabIndex = 5;
             button4.Text = "Course sessions";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // courseSessionAttendance
+            // 
+            courseSessionAttendance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            courseSessionAttendance.Location = new Point(97, 208);
+            courseSessionAttendance.Name = "courseSessionAttendance";
+            courseSessionAttendance.Size = new Size(420, 54);
+            courseSessionAttendance.TabIndex = 6;
+            courseSessionAttendance.Text = "Course sessions Attendance";
+            courseSessionAttendance.UseVisualStyleBackColor = true;
             // 
             // InstructorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(650, 274);
+            Controls.Add(courseSessionAttendance);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -111,5 +125,6 @@
         private Button button1;
         private Button button2;
         private Button button4;
+        private Button courseSessionAttendance;
     }
 }

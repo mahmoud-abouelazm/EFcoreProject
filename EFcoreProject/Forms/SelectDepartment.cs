@@ -13,26 +13,28 @@ namespace EFcoreProject
 {
     public partial class SelectDepartment : Form
     {
-        InstructorRepo instRepo;
+        DepartmentRepo departmentRepo;
+        // create new department repo
         public SelectDepartment()
         {
-            instRepo = new();
+            departmentRepo = new();
             InitializeComponent();
         }
         // Change signature from async Task -> async void
         private async void button1_Click(object sender, EventArgs e)
         {
+            // update following section to choose department id , and go to it's portal
             var id = (Convert.ToInt32(chooseInstructor.SelectedValue ?? 0));
-            if (await instRepo.CheckInstructor(id))
+            if (await departmentRepo.CheckDepartment(id))
             {
-                InstructorForm instructorForm = new(id);
+                Forms.DepartmentDetails departmentDetails = new(id);
                 Hide();
-                await instructorForm.ShowDialogAsync();
+                departmentDetails.ShowDialog();
                 Close();
             }
             else
             {
-                MessageBox.Show("No Instructor Found !!",
+                MessageBox.Show("No Department Found !!",
                     "Enter correct Id",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -41,9 +43,9 @@ namespace EFcoreProject
 
         private async void userID_Load(object sender, EventArgs e)
         {
-            chooseInstructor.DataSource = await instRepo.GetAllInstructors();
-            chooseInstructor.DisplayMember = "FirstName";
-            chooseInstructor.ValueMember = "ID";
+            chooseInstructor.DataSource = await departmentRepo.GetAllDepartments();
+            chooseInstructor.DisplayMember = "Name";
+            chooseInstructor.ValueMember = "Id";
         }
     }
 }
