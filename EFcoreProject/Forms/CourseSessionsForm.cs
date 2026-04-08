@@ -53,14 +53,19 @@ namespace EFcoreProject.Forms
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridView1.CurrentRow != null)
             {
-                context.SaveChanges();
-                MessageBox.Show("Changes saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var session = dataGridView1.CurrentRow.DataBoundItem as CourseSession;
+                if (session != null)
+                {
+                    var editForm = new EditCourseSessionForm(session.Id, instructorId);
+                    editForm.ShowDialog();
+                    LoadData();
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error saving changes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a session to update.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
