@@ -99,6 +99,7 @@
             courseSessionAttendance.TabIndex = 6;
             courseSessionAttendance.Text = "Course sessions Attendance";
             courseSessionAttendance.UseVisualStyleBackColor = true;
+            courseSessionAttendance.Click += courseSessionAttendance_Click;
             // 
             // InstructorForm
             // 

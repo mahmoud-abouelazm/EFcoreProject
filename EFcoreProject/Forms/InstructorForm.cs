@@ -51,5 +51,11 @@ namespace EFcoreProject
             CourseSessionsForm courseSessionsForm = new CourseSessionsForm(id);
             courseSessionsForm.ShowDialog();
         }
+
+        private void courseSessionAttendance_Click(object sender, EventArgs e)
+        {
+            CourseSessionAttendanceForm courseSessionAttendanceForm = new CourseSessionAttendanceForm(id);
+            courseSessionAttendanceForm.ShowDialog();
+        }
     }
 }
