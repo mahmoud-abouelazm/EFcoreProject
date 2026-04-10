@@ -26,5 +26,13 @@ namespace EFcoreProject
             selectDepartmentForm.ShowDialog();
             this.Show();
         }
+
+        private void btnSysAdmin_Click(object sender, EventArgs e)
+        {
+            Hide();
+            EFcoreProject.Forms.SystemAdminForm form = new();
+            form.ShowDialog();
+            Show();
+        }
     }
 }

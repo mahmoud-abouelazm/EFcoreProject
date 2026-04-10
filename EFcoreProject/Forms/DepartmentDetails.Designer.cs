@@ -33,6 +33,7 @@
             AddBtn = new Button();
             Courses = new DataGridView();
             deptInfoEdit = new Button();
+            assignStudentBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)Courses).BeginInit();
             SuspendLayout();
             // 
@@ -65,10 +66,14 @@
             // 
             // Courses
             // 
+            Courses.AllowUserToAddRows = false;
             Courses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Courses.Location = new Point(12, 12);
+            Courses.MultiSelect = false;
             Courses.Name = "Courses";
+            Courses.ReadOnly = true;
             Courses.RowHeadersWidth = 51;
+            Courses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Courses.Size = new Size(631, 351);
             Courses.TabIndex = 4;
             // 
@@ -81,11 +86,21 @@
             deptInfoEdit.Text = "Department info";
             deptInfoEdit.UseVisualStyleBackColor = true;
             // 
+            // assignStudentBtn
+            // 
+            assignStudentBtn.Location = new Point(67, 461);
+            assignStudentBtn.Name = "assignStudentBtn";
+            assignStudentBtn.Size = new Size(517, 50);
+            assignStudentBtn.TabIndex = 9;
+            assignStudentBtn.Text = "Students In Courses";
+            assignStudentBtn.UseVisualStyleBackColor = true;
+            // 
             // DepartmentDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(655, 450);
+            ClientSize = new Size(658, 523);
+            Controls.Add(assignStudentBtn);
             Controls.Add(deptInfoEdit);
             Controls.Add(deleteBtn);
             Controls.Add(updateBtn);
@@ -93,6 +108,7 @@
             Controls.Add(Courses);
             Name = "DepartmentDetails";
             Text = "DepartmentDetails";
+            Load += DepartmentDetails_Load;
             ((System.ComponentModel.ISupportInitialize)Courses).EndInit();
             ResumeLayout(false);
         }
@@ -104,5 +120,6 @@
         private Button AddBtn;
         private DataGridView Courses;
         private Button deptInfoEdit;
+        private Button assignStudentBtn;
     }
 }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EFcoreProject.Forms
@@ -13,6 +8,18 @@ namespace EFcoreProject.Forms
         public SystemAdminForm()
         {
             InitializeComponent();
+        }
+
+        private void btnManageDepartments_Click(object sender, EventArgs e)
+        {
+            ManageDepartmentsForm form = new();
+            form.ShowDialog();
+        }
+
+        private void btnManageInstructors_Click(object sender, EventArgs e)
+        {
+            ManageInstructorsForm form = new();
+            form.ShowDialog();
         }
     }
 }

@@ -53,19 +53,29 @@ namespace EFcoreProject.Forms
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
-            {
-                var attendance = dataGridView1.CurrentRow.DataBoundItem as CourseSessionAttendance;
-                if (attendance != null)
-                {
-                    var editForm = new EditCourseSessionAttendanceForm(attendance.Id, instructorId);
-                    editForm.ShowDialog();
-                    LoadData();
-                }
-            }
-            else
+            if (dataGridView1.CurrentRow == null)
             {
                 MessageBox.Show("Please select a record to update.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var attendance = dataGridView1.CurrentRow.DataBoundItem as CourseSessionAttendance;
+            if (attendance == null)
+            {
+                MessageBox.Show("No valid record selected.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var editForm = new EditCourseSessionAttendanceForm(attendance.Id, instructorId))
+            {
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    // If supported:
+                    context.ChangeTracker.Clear();
+                    LoadData();
+
+                    
+                }
             }
         }
 
@@ -83,5 +93,7 @@ namespace EFcoreProject.Forms
                 }
             }
         }
+
+        
     }
 }

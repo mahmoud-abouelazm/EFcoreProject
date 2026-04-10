@@ -18,14 +18,14 @@ namespace EFcoreProject.Forms
             InitializeComponent();
             this.instructorId = instructorId;
             context = new EFContext();
-            sessions = context.CourseSessions
-                .Where(s => s.InstructorId == instructorId)
-                .ToList();
+            
         }
 
         private void AddCourseSessionAttendanceForm_Load(object sender, EventArgs e)
         {
-            
+            sessions = context.CourseSessions
+                .Where(s => s.InstructorId == instructorId)
+                .ToList();
             comboBoxSession.DataSource = sessions;
             comboBoxSession.DisplayMember = "Title";
             comboBoxSession.ValueMember = "Id";
@@ -64,7 +64,8 @@ namespace EFcoreProject.Forms
             {
                 int courseId = selectedSession.CourseId;
                 var students = context.Students
-                    .Where(s => s.Courses.Any(c => c.Id == courseId))
+                    .Include(s=>s.Courses)
+                    .Where(s => s.Courses.Any(c => c.CourseId == courseId))
                     .ToList();
                 comboBoxStudent.DataSource = students;
                 comboBoxStudent.DisplayMember = "FirstName";

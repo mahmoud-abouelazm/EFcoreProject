@@ -24,6 +24,6 @@ namespace EFcoreProject.Models
 
         public ICollection<CourseSession> CourseSessions { get; set; } = new HashSet<CourseSession>();
     // Many-to-many: Students enrolled in this course
-    public ICollection<Student> Students { get; set; } = new HashSet<Student>();
+    public ICollection<StudentCourse> Students { get; set; } = new HashSet<StudentCourse>();
     }
 }

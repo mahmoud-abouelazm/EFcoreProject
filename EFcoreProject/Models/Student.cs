@@ -16,7 +16,7 @@ namespace EFcoreProject.Models
         // Nav Properties 
 
         // Many-to-many: Courses the student enrolled in
-        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
+        public ICollection<StudentCourse> Courses { get; set; } = new HashSet<StudentCourse>();
         public ICollection<CourseSessionAttendance> CourseSessionAttendances { get; set; } = new HashSet<CourseSessionAttendance>();
 
     }

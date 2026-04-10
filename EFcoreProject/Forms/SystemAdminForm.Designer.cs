@@ -28,18 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnManageDepartments = new Button();
+            btnManageInstructors = new Button();
             SuspendLayout();
+            // 
+            // btnManageDepartments
+            // 
+            btnManageDepartments.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnManageDepartments.Location = new Point(120, 124);
+            btnManageDepartments.Name = "btnManageDepartments";
+            btnManageDepartments.Size = new Size(497, 63);
+            btnManageDepartments.TabIndex = 0;
+            btnManageDepartments.Text = "Manage Departments";
+            btnManageDepartments.UseVisualStyleBackColor = true;
+            btnManageDepartments.Click += btnManageDepartments_Click;
+            // 
+            // btnManageInstructors
+            // 
+            btnManageInstructors.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnManageInstructors.Location = new Point(120, 236);
+            btnManageInstructors.Name = "btnManageInstructors";
+            btnManageInstructors.Size = new Size(497, 63);
+            btnManageInstructors.TabIndex = 1;
+            btnManageInstructors.Text = "Manage Instructors";
+            btnManageInstructors.UseVisualStyleBackColor = true;
+            btnManageInstructors.Click += btnManageInstructors_Click;
             // 
             // SystemAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 450);
+            Controls.Add(btnManageInstructors);
+            Controls.Add(btnManageDepartments);
             Name = "SystemAdminForm";
-            Text = "SystemAdminForm";
+            Text = "System Admin";
             ResumeLayout(false);
         }
 
         #endregion
+        private Button btnManageDepartments;
+        private Button btnManageInstructors;
     }
 }

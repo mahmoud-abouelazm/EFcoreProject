@@ -16,6 +16,8 @@ namespace EFcoreProject.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<StudentCourse>()
+                .ToTable("StudentCourse");
             modelBuilder.Entity<Department>()
                 .HasMany(d => d.Instructors)
                 .WithOne(i => i.Department)

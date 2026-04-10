@@ -54,7 +54,8 @@ namespace EFcoreProject.Forms
                 attendance.StudentId = (int)comboBoxStudent.SelectedValue;
                 attendance.Grade = (int)numericUpDownGrade.Value;
                 attendance.Notes = txtNotes.Text;
-
+                attendance.Id = attendanceId;
+                context.Update(attendance);
                 context.SaveChanges();
 
                 MessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
