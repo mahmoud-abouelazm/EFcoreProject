@@ -22,8 +22,17 @@ namespace EFcoreProject
         private void btnDptMng_Click(object sender, EventArgs e)
         {
             this.Hide();
-            userIDForm.ShowDialog();
+            SelectDepartment selectDepartmentForm = new();
+            selectDepartmentForm.ShowDialog();
             this.Show();
+        }
+
+        private void btnSysAdmin_Click(object sender, EventArgs e)
+        {
+            Hide();
+            EFcoreProject.Forms.SystemAdminForm form = new();
+            form.ShowDialog();
+            Show();
         }
     }
 }

@@ -4,6 +4,7 @@ using EFcoreProject.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFcoreProject.Migrations
 {
     [DbContext(typeof(EFContext))]
-    partial class EFContextModelSnapshot : ModelSnapshot
+    [Migration("20260409143120_change-courseStudent-tableName")]
+    partial class changecourseStudenttableName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,21 @@ namespace EFcoreProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("CourseStudent", b =>
+                {
+                    b.Property<int>("CoursesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CoursesId", "StudentsId");
+
+                    b.HasIndex("StudentsId");
+
+                    b.ToTable("CourseStudent");
+                });
 
             modelBuilder.Entity("EFcoreProject.Models.Course", b =>
                 {
@@ -732,6 +750,21 @@ namespace EFcoreProject.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CourseStudent", b =>
+                {
+                    b.HasOne("EFcoreProject.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EFcoreProject.Models.Student", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("EFcoreProject.Models.Course", b =>
                 {
                     b.HasOne("EFcoreProject.Models.Department", "Department")
@@ -812,13 +845,13 @@ namespace EFcoreProject.Migrations
             modelBuilder.Entity("EFcoreProject.Models.StudentCourse", b =>
                 {
                     b.HasOne("EFcoreProject.Models.Course", "Course")
-                        .WithMany("Students")
+                        .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EFcoreProject.Models.Student", "Student")
-                        .WithMany("Courses")
+                        .WithMany()
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -831,8 +864,6 @@ namespace EFcoreProject.Migrations
             modelBuilder.Entity("EFcoreProject.Models.Course", b =>
                 {
                     b.Navigation("CourseSessions");
-
-                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("EFcoreProject.Models.CourseSession", b =>
@@ -859,8 +890,6 @@ namespace EFcoreProject.Migrations
             modelBuilder.Entity("EFcoreProject.Models.Student", b =>
                 {
                     b.Navigation("CourseSessionAttendances");
-
-                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }

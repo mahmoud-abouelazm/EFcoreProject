@@ -13,15 +13,16 @@ namespace EFcoreProject
 {
     public partial class userID : Form
     {
+        InstructorRepo instRepo;
         public userID()
         {
+            instRepo = new();
             InitializeComponent();
         }
-        InstructorRepo instRepo = new();
         // Change signature from async Task -> async void
         private async void button1_Click(object sender, EventArgs e)
         {
-            var id = (Convert.ToInt32(numericUpDown1?.Value ?? 0));
+            var id = (Convert.ToInt32(chooseInstructor.SelectedValue ?? 0));
             if (await instRepo.CheckInstructor(id))
             {
                 InstructorForm instructorForm = new(id);
@@ -31,11 +32,18 @@ namespace EFcoreProject
             }
             else
             {
-                MessageBox.Show("No Instructor Found !!" ,
-                    "Enter correct Id" ,
+                MessageBox.Show("No Instructor Found !!",
+                    "Enter correct Id",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private async void userID_Load(object sender, EventArgs e)
+        {
+            chooseInstructor.DataSource = await instRepo.GetAllInstructors();
+            chooseInstructor.DisplayMember = "FirstName";
+            chooseInstructor.ValueMember = "ID";
         }
     }
 }

@@ -54,6 +54,7 @@
             btnSysAdmin.TabIndex = 1;
             btnSysAdmin.Text = "System Admin";
             btnSysAdmin.UseVisualStyleBackColor = true;
+            btnSysAdmin.Click += btnSysAdmin_Click;
             // 
             // btnInstructor
             // 

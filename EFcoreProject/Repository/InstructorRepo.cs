@@ -14,6 +14,10 @@ namespace EFcoreProject.Repository
         {
             return await context.Instructors.FindAsync(id);
         }
+        public async Task<List<Instructor>> GetAllInstructors()
+        {
+            return await context.Instructors.ToListAsync();
+        }
         public async Task<bool> CheckInstructor(int id)
         {
             return await context.Instructors.AnyAsync(i=>i.ID == id);

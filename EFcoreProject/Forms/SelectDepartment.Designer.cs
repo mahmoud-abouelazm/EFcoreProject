@@ -1,6 +1,6 @@
 ﻿namespace EFcoreProject
 {
-    partial class userID
+    partial class SelectDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,18 @@
         {
             label1 = new Label();
             button1 = new Button();
-            numericUpDown1 = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            chooseInstructor = new ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(127, 58);
+            label1.Location = new Point(101, 59);
             label1.Name = "label1";
-            label1.Size = new Size(190, 38);
+            label1.Size = new Size(263, 38);
             label1.TabIndex = 0;
-            label1.Text = "Enter User ID";
+            label1.Text = "Select Department";
             // 
             // button1
             // 
@@ -55,26 +54,25 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // numericUpDown1
+            // chooseInstructor
             // 
-            numericUpDown1.InterceptArrowKeys = false;
-            numericUpDown1.Location = new Point(145, 131);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 27);
-            numericUpDown1.TabIndex = 3;
-            numericUpDown1.TextAlign = HorizontalAlignment.Center;
+            chooseInstructor.FormattingEnabled = true;
+            chooseInstructor.Location = new Point(142, 129);
+            chooseInstructor.Name = "chooseInstructor";
+            chooseInstructor.Size = new Size(151, 28);
+            chooseInstructor.TabIndex = 4;
             // 
-            // userID
+            // SelectDepartment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(465, 305);
-            Controls.Add(numericUpDown1);
+            Controls.Add(chooseInstructor);
             Controls.Add(button1);
             Controls.Add(label1);
-            Name = "userID";
+            Name = "SelectDepartment";
             Text = "userID";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            Load += userID_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -83,6 +81,6 @@
 
         private Label label1;
         private Button button1;
-        private NumericUpDown numericUpDown1;
+        private ComboBox chooseInstructor;
     }
 }

@@ -16,4 +16,46 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Forms\CourseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DepartmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DepartmentInfoDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DepartmentAdminDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DepartmentStudentCoursesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InstructorAdminDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ManageDepartmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ManageInstructorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SelectDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\StudentAdminDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\StudentCourseAssignmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ManageStudentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SystemAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
