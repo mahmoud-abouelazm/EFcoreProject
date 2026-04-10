@@ -48,12 +48,11 @@ namespace EFcoreProject.Forms
             instructor.FirstName = firstNameBox.Text;
             instructor.LastName = LastNameBox.Text;
             instructor.Phone = PhoneBox.Text;
-
             if (comboBox1.SelectedValue != null)
             {
                 instructor.DepartmentId = (int)comboBox1.SelectedValue;
             }
-
+            eFContext.Update(instructor);
             eFContext.SaveChanges();
             MessageBox.Show("Instructor updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();

@@ -44,6 +44,7 @@ namespace EFcoreProject
         {
             InstructorDetails instructorDetails = new(instructor);
             instructorDetails.ShowDialog();
+            InstructorForm_Load(null ,null);
         }
 
         private void button4_Click(object sender, EventArgs e)
