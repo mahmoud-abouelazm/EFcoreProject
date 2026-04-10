@@ -44,7 +44,13 @@
     <Compile Update="Forms\SelectDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\StudentAdminDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\StudentCourseAssignmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ManageStudentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\SystemAdminForm.cs">

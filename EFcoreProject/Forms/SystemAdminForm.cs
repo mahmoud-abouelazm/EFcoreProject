@@ -21,5 +21,11 @@ namespace EFcoreProject.Forms
             ManageInstructorsForm form = new();
             form.ShowDialog();
         }
+
+        private void btnManageStudents_Click(object sender, EventArgs e)
+        {
+            ManageStudentsForm form = new();
+            form.ShowDialog();
+        }
     }
 }

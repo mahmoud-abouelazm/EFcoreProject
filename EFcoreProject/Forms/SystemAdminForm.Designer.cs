@@ -30,6 +30,7 @@
         {
             btnManageDepartments = new Button();
             btnManageInstructors = new Button();
+            btnManageStudents = new Button();
             SuspendLayout();
             // 
             // btnManageDepartments
@@ -54,11 +55,23 @@
             btnManageInstructors.UseVisualStyleBackColor = true;
             btnManageInstructors.Click += btnManageInstructors_Click;
             // 
+            // btnManageStudents
+            // 
+            btnManageStudents.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnManageStudents.Location = new Point(120, 347);
+            btnManageStudents.Name = "btnManageStudents";
+            btnManageStudents.Size = new Size(497, 63);
+            btnManageStudents.TabIndex = 2;
+            btnManageStudents.Text = "Manage Students";
+            btnManageStudents.UseVisualStyleBackColor = true;
+            btnManageStudents.Click += btnManageStudents_Click;
+            // 
             // SystemAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 450);
+            Controls.Add(btnManageStudents);
             Controls.Add(btnManageInstructors);
             Controls.Add(btnManageDepartments);
             Name = "SystemAdminForm";
@@ -69,5 +82,6 @@
         #endregion
         private Button btnManageDepartments;
         private Button btnManageInstructors;
+        private Button btnManageStudents;
     }
 }
